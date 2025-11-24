@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Test Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 90%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        input, select, button { padding: 5px; margin: 5px 0; }
+        h1, h2 { margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<!-- CUSTOMERS -->
+<h1>Customers</h1>
+<table id="customersTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Add Customer</h2>
+<input type="text" id="full_name" placeholder="Full Name">
+<input type="text" id="phone" placeholder="Phone">
+<input type="text" id="email" placeholder="Email">
+<button onclick="addCustomer()">Add Customer</button>
+
+<!-- EMPLOYEES -->
+<h1>Employees</h1>
+<table id="employeesTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Add Employee</h2>
+<input type="text" id="emp_full_name" placeholder="Full Name">
+<input type="text" id="emp_phone" placeholder="Phone">
+<input type="text" id="emp_position" placeholder="Position">
+<button onclick="addEmployee()">Add Employee</button>
+
+<!-- PRODUCTS -->
+<h1>Products</h1>
+<table id="productsTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Add Product</h2>
+<input type="text" id="prod_name" placeholder="Product Name">
+<input type="text" id="prod_category" placeholder="Category">
+<input type="number" id="prod_price" placeholder="Price">
+<input type="number" id="prod_stock" placeholder="Stock">
+<button onclick="addProduct()">Add Product</button>
+
+<!-- ORDERS -->
+<h1>Orders</h1>
+<table id="ordersTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Employee</th>
+            <th>Order Date</th>
+            <th>Items</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Place Order</h2>
+<select id="order_customer"></select>
+<select id="order_employee"></select>
+<input type="text" id="order_items" placeholder="ProductID:Quantity, e.g. 1:2,3:1">
+<button onclick="placeOrder()">Place Order</button>
+
+<script src="script.js"></script>
+</body>
+</html>
