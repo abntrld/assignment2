@@ -1,6 +1,5 @@
-const pool = require('../db'); // PostgreSQL pool
+const pool = require('../db'); 
 
-// Get all products
 const getProducts = async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM products ORDER BY product_id');
@@ -11,7 +10,6 @@ const getProducts = async (req, res) => {
     }
 };
 
-// Add new product
 const addProduct = async (req, res) => {
     try {
         const { product_name, category, price, stock } = req.body;
@@ -26,7 +24,6 @@ const addProduct = async (req, res) => {
     }
 };
 
-// Delete product
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;

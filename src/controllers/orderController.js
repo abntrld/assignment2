@@ -1,6 +1,5 @@
 const pool = require('../db');
 
-// Get all orders
 const getOrders = async (req, res) => {
     try {
         const ordersResult = await pool.query('SELECT * FROM orders ORDER BY order_id');
@@ -20,7 +19,6 @@ const getOrders = async (req, res) => {
     }
 };
 
-// Place new order
 const createOrder = async (req, res) => {
     try {
         const { customer_id, employee_id, items } = req.body;
@@ -49,7 +47,6 @@ const createOrder = async (req, res) => {
     }
 };
 
-// Delete order
 const deleteOrder = async (req, res) => {
     try {
         const { id } = req.params;

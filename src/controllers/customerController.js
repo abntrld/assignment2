@@ -1,6 +1,5 @@
 const pool = require('../db');
 
-// Get all customers
 const getAllCustomers = async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM customers');
@@ -10,7 +9,6 @@ const getAllCustomers = async (req, res) => {
     }
 };
 
-// Get a customer by ID
 const getCustomerById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -22,7 +20,6 @@ const getCustomerById = async (req, res) => {
     }
 };
 
-// Add a new customer
 const addCustomer = async (req, res) => {
     try {
         const { full_name, phone, email } = req.body; // use full_name here
@@ -36,7 +33,6 @@ const addCustomer = async (req, res) => {
     }
 };
 
-// Update a customer
 const updateCustomer = async (req, res) => {
     try {
         const { id } = req.params;
@@ -52,7 +48,6 @@ const updateCustomer = async (req, res) => {
     }
 };
 
-// Delete a customer
 const deleteCustomer = async (req, res) => {
     try {
         const { id } = req.params;

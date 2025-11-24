@@ -1,6 +1,5 @@
 const apiBase = 'http://localhost:3000';
 
-// ---------------- CUSTOMERS ----------------
 const customerApi = `${apiBase}/customers`;
 async function loadCustomers() {
     const res = await fetch(customerApi);
@@ -19,7 +18,6 @@ async function loadCustomers() {
         tbody.appendChild(tr);
     });
 
-    // Fill customer dropdown for orders
     const select = document.getElementById('order_customer');
     select.innerHTML = '';
     customers.forEach(c => select.innerHTML += `<option value="${c.customer_id}">${c.full_name}</option>`);
@@ -45,7 +43,6 @@ async function deleteCustomer(id) {
     loadCustomers();
 }
 
-// ---------------- EMPLOYEES ----------------
 const empApi = `${apiBase}/employees`;
 async function loadEmployees() {
     const res = await fetch(empApi);
@@ -64,7 +61,6 @@ async function loadEmployees() {
         tbody.appendChild(tr);
     });
 
-    // Fill employee dropdown for orders
     const select = document.getElementById('order_employee');
     select.innerHTML = '';
     employees.forEach(e => select.innerHTML += `<option value="${e.employee_id}">${e.full_name}</option>`);
@@ -90,7 +86,6 @@ async function deleteEmployee(id) {
     loadEmployees();
 }
 
-// ---------------- PRODUCTS ----------------
 const prodApi = `${apiBase}/products`;
 async function loadProducts() {
     const res = await fetch(prodApi);
@@ -133,7 +128,6 @@ async function deleteProduct(id) {
     loadProducts();
 }
 
-// ---------------- ORDERS ----------------
 const orderApi = `${apiBase}/orders`;
 async function loadOrders() {
     const res = await fetch(orderApi);
@@ -178,7 +172,6 @@ async function deleteOrder(id) {
     loadOrders();
 }
 
-// ---------------- LOAD ALL ----------------
 loadCustomers();
 loadEmployees();
 loadProducts();

@@ -1,6 +1,5 @@
-const pool = require('../db'); // PostgreSQL pool
+const pool = require('../db'); 
 
-// Get all employees
 const getEmployees = async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM employees ORDER BY employee_id');
@@ -11,7 +10,6 @@ const getEmployees = async (req, res) => {
     }
 };
 
-// Add new employee
 const addEmployee = async (req, res) => {
     try {
         const { full_name, phone, position } = req.body;
@@ -26,7 +24,6 @@ const addEmployee = async (req, res) => {
     }
 };
 
-// Delete employee
 const deleteEmployee = async (req, res) => {
     try {
         const { id } = req.params;
